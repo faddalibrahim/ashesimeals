@@ -1,0 +1,164 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.2rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ddd;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  /* background: #555; */
+}
+
+:root {
+  --background-dark: #fcfcfc;
+  --card-background: #fff;
+  --header-color: #333;
+  --text-color: #444;
+  --text-color-2: #555;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "product sans";
+  background-color: var(--background-dark);
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  text-transform: capitalize;
+  margin: 0.3rem 0 3rem;
+  color: var(--header-color);
+  font-size: 3rem;
+  font-weight: normal;
+  color: rebeccapurple;
+}
+li {
+  list-style: none;
+}
+
+main {
+  /* height: 70vh; */
+  padding: 2.5rem 0;
+  display: flex;
+  flex-flow: column;
+  /* justify-content: center; */
+}
+
+.previous {
+  color: #aaa;
+}
+
+.previous:hover {
+  color: rebeccapurple;
+}
+
+.meals-snacks {
+  display: flex;
+  flex-flow: column;
+}
+
+.meals,
+.snacks {
+  background-color: var(--card-background);
+  border-radius: 0.7rem;
+  width: 80vw;
+  height: 50vh;
+  overflow-y: auto;
+  position: relative;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  flex-flow: column;
+}
+
+.meals > div,
+.snacks > div {
+  flex-grow: 1;
+  overflow: auto;
+  padding: 1rem;
+}
+
+.meals h2,
+.snacks h2 {
+  background-color: hsl(270, 50%, 60%);
+  padding: 1rem;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 0rem;
+}
+
+.meals:hover,
+.snacks:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+  animation: move-right 0.3s linear forwards;
+  z-index: 999;
+  transition: all 0.5s linear;
+}
+
+.snacks {
+  bottom: 5rem;
+  left: 1.5rem;
+  z-index: 0;
+}
+
+@keyframes move-right {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg) translateX(5rem);
+  }
+}
+
+.meals-snacks li {
+  color: var(--text-color-2);
+  font-size: 1.1rem;
+  line-height: 2rem;
+  background-color: #fbfbfb;
+  margin-bottom: 0.3rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+/* Small (sm) devices (landscape phones, 567px and up) */
+@media screen and (min-width: 568px) {
+  :root {
+    --bg-color: #222;
+  }
+
+  .meals-snacks {
+    flex-flow: row;
+  }
+
+  .meals,
+  .snacks {
+    width: 20vw;
+  }
+
+  .snacks {
+    bottom: -2rem;
+    left: -2rem;
+    z-index: 0;
+  }
+}

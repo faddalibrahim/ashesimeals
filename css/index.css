@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --background-dark: #fff;
+  --card-background: #fff;
+  --header-color: #faf;
+  --text-color: #aaa;
+}
+
+a {
+  text-decoration: none;
+  padding: 5rem;
+  display: block;
+  width: 7rem;
+  color: var(--text-color);
+}
+
+a:hover {
+  color: darkseagreen;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  background-color: var(--background-dark);
+  font-family: "product sans";
+}
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 70%;
+}
+h1 {
+  text-transform: capitalize;
+}
+
+.cafeteria {
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  color: var(--text-color);
+  transition: all 0.2s linear;
+  border-radius: 0.2rem;
+  background: var(--card-background);
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  border-left: 0.5rem solid darkseagreen;
+}
+
+.cafeteria:hover {
+  color: hsl(248deg 39% 50%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+    rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+/* .cafeteria small {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background-color: darkseagreen;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  border-radius: 50%;
+} */
+
+/* Small (sm) devices (landscape phones, 567px and up) */
+@media screen and (min-width: 568px) {
+  :root {
+    --bg-color: #222;
+  }
+
+  main {
+    flex-flow: row;
+    width: 50%;
+  }
+
+  .cafeteria {
+    /* font-size: 1.5rem; */
+  }
+}
+
+/* Medium (md) devices (tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  :root {
+    --bg-color: #333;
+  }
+}
